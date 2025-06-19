@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AWS Management Console</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-left">
+        <div class="logo">IYB</div>
+        <div class="service-name">Management Console</div>
+      </div>
+      <div class="header-right">
+        <div class="region">DZ Center (Algiers)</div>
+        <div class="user">admin</div>
+      </div>
+    </div>
+
+    <div class="nav-bar">
+      <div class="nav-item active" data-service="compute">
+        <span>Compute</span>
+        <div class="dropdown">
+          <div class="dropdown-item" data-endpoint="ec2">EC2</div>
+          <div class="dropdown-item" data-endpoint="lambda">Lambda</div>
+          <div class="dropdown-item" data-endpoint="batch">Batch</div>
+          <div class="dropdown-item" data-endpoint="lightsail">Lightsail</div>
+        </div>
+      </div>
+
+      <div class="nav-item" data-service="storage">
+        <span>Storage</span>
+        <div class="dropdown">
+          <div class="dropdown-item" data-endpoint="s3">S3</div>
+          <div class="dropdown-item" data-endpoint="ebs">EBS</div>
+          <div class="dropdown-item" data-endpoint="efs">EFS</div>
+          <div class="dropdown-item" data-endpoint="fsx">FSx</div>
+        </div>
+      </div>
+
+      <div class="nav-item" data-service="database">
+        <span>Database</span>
+        <div class="dropdown">
+          <div class="dropdown-item" data-endpoint="rds">RDS</div>
+          <div class="dropdown-item" data-endpoint="dynamodb">DynamoDB</div>
+          <div class="dropdown-item" data-endpoint="redshift">Redshift</div>
+          <div class="dropdown-item" data-endpoint="aurora">Aurora</div>
+        </div>
+      </div>
+
+      <div class="nav-item" data-service="networking">
+        <span>Networking</span>
+        <div class="dropdown">
+          <div class="dropdown-item" data-endpoint="vpc">VPC</div>
+          <div class="dropdown-item" data-endpoint="cloudfront">CloudFront</div>
+          <div class="dropdown-item" data-endpoint="route53">Route 53</div>
+          <div class="dropdown-item" data-endpoint="elb">Load Balancer</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="breadcrumb">
+        <span>Services</span>
+        <span class="separator">></span>
+        <span id="current-service">Compute</span>
+      </div>
+
+      <div class="content-area">
+        <h1 id="service-title">Compute Services</h1>
+        <p id="service-description">
+          Launch and manage compute capacity in the AWS cloud.
+        </p>
+
+        <div class="service-grid">
+          <div class="service-card">
+            <div class="card-icon">⚡</div>
+            <h3>EC2</h3>
+            <p>Virtual servers in the cloud</p>
+          </div>
+          <div class="service-card">
+            <div class="card-icon">λ</div>
+            <h3>Lambda</h3>
+            <p>Run code without thinking about servers</p>
+          </div>
+          <div class="service-card">
+            <div class="card-icon">📦</div>
+            <h3>Batch</h3>
+            <p>Fully managed batch processing</p>
+          </div>
+          <div class="service-card">
+            <div class="card-icon">🚀</div>
+            <h3>Lightsail</h3>
+            <p>Virtual private servers made easy</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="response-bar" id="responseBar">
+      <div class="response-content">
+        <div class="response-left">
+          <div class="status-dot"></div>
+          <span id="response-message">Ready</span>
+        </div>
+        <div class="response-right">
+          <span id="response-time">--</span>
+          <span id="response-status">200</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
