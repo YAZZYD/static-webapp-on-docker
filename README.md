@@ -86,7 +86,7 @@ docker stop <container_id>
   docker logs yazzyd
   ```
 
--You can delete built images and build your own image using:
+- You can delete built images and build your own image using:
 
 ```
 docker images
