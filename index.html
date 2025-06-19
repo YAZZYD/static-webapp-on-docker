@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta tags and page title -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HIS Management Console</title>
+    <!-- Link to CSS file -->
     <link rel="stylesheet" href="public/css//index.css" />
   </head>
   <body>
+    <!-- Header section -->
     <div class="header">
       <div class="header-left">
         <div class="logo">HIS</div>
@@ -18,6 +21,7 @@
       </div>
     </div>
 
+    <!-- Navigation bar with services and dropdowns -->
     <div class="nav-bar">
       <div class="nav-item active" data-service="compute">
         <span>Compute</span>
@@ -60,7 +64,9 @@
       </div>
     </div>
 
+    <!-- Main content area -->
     <div class="main-content">
+      <!-- Breadcrumb navigation -->
       <div class="breadcrumb">
         <span>Services</span>
         <span class="separator">></span>
@@ -68,11 +74,13 @@
       </div>
 
       <div class="content-area">
+        <!-- Service title and description -->
         <h1 id="service-title">Compute Services</h1>
         <p id="service-description">
           Launch and manage compute capacity in the AWS cloud.
         </p>
 
+        <!-- Service cards grid -->
         <div class="service-grid">
           <div class="service-card">
             <div class="card-icon">⚡</div>
@@ -98,6 +106,7 @@
       </div>
     </div>
 
+    <!-- Response bar at the bottom -->
     <div class="response-bar" id="responseBar">
       <div class="response-content">
         <div class="response-left">
@@ -111,6 +120,7 @@
       </div>
     </div>
 
+    <!-- Link to JavaScript file -->
     <script src="public/js/index.js"></script>
   </body>
 </html>
