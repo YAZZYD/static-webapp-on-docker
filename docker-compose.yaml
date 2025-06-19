@@ -1,7 +1,20 @@
 services:
-  app:
+  image:
+    #getting image from docker hub
     image: yazzyd/static-web-app
-    container_name: static-web-app
+    #assigning a name to the container
+    container_name: app-image-build
+    #forwarding port
     ports:
       - "80:80"
+    #restart policy
+    restart: unless-stopped
+
+  local:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: app-local-build
+    ports:
+      - "8080:80"
     restart: unless-stopped
