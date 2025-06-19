@@ -1,0 +1,316 @@
+/* GOOD PRACTICE TO USE CSS VARIABLES */
+:root {
+  --bg-color: #fafafa;
+  --text-color: #232f3e;
+  --header-bg-color: var(--text-color);
+  --header-text-color: #ffffff;
+  --header-border-color: #3c4043;
+  --logo-color: #ff9900;
+  --region-user-bg-color: #37475a;
+  --region-user-hover-bg-color: #4a5568;
+  --nav-bar-bg-color: #ffffff;
+  --nav-bar-border-color: #d5dbdb;
+  --nav-item-hover-bg-color: #f9f9f9;
+  --nav-item-active-bg-color: #fff3cd;
+  --breadcrumb-color: #687078;
+  --content-area-h1-color: #232f3e;
+  --content-area-p-color: #687078;
+  --service-grid-border-color: #d5dbdb;
+  --service-grid-border-color-hover: #ff9900;
+  --service-card-h3-color: #0073bb;
+  --service-card-p-color: #687078;
+  --response-bar-bg-color: #232f3e;
+  --status-dot-bg-color: #00d4aa;
+  --response-right-color: #aab7b8;
+}
+
+/* APPLIED ON ALL ELEMENTS*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*BODY STYLING*/
+
+body {
+  font-family: "Amazon Ember", "Helvetica Neue", Roboto, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.4;
+  font-size: 1rem;
+}
+
+/*USING REM INSTEAD OF PX TO ENSURE SCALABILTY*/
+
+/*HEADER STYLING*/
+.header {
+  background-color: var(--header-bg-color);
+  color: #ffffff;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+  border-bottom: 1px solid var(--header-border-color);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.logo {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--logo-color);
+}
+
+.service-name {
+  font-size: 0.875rem;
+  color: var(--header-text-color);
+}
+
+.region,
+.user {
+  font-size: 0.875rem;
+  padding: 0.375rem 0.75rem;
+  background-color: var(--region-user-bg-color);
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+.region:hover,
+.user:hover {
+  background-color: var(--region-user-hover-bg-color);
+}
+
+/*NAVIGATION BAR STYLING*/
+
+.nav-bar {
+  background-color: var(--nav-bar-bg-color);
+  border-bottom: 1px solid var(--nav-bar-border-color);
+  display: flex;
+  min-height: 3rem;
+  position: relative;
+}
+
+/* NAVIGATION ITEM STYLING */
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+  cursor: pointer;
+  border-bottom: 0.1975rem solid transparent;
+  transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+  background-color: var(--nav-item-hover-bg-color);
+  border-bottom-color: var(--logo-color);
+}
+
+.nav.item.active {
+  border-bottom-color: var(--logo-color);
+  background-color: var(--nav-item-active-bg-color);
+}
+
+.nav-item span {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+/* DROPDOWN MENU STYLING */
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  min-width: 12.5rem;
+  background-color: var(--nav-bar-bg-color);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--nav-bar-border-color);
+  border-radius: 0.25rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-0.5rem);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.nav-item:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: var(--nav-item-hover-bg-color);
+}
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+/* BREADCRUMB(the ">" used for navigation) STYLING */
+.breadcrumb {
+  font-size: 0.75rem;
+  color: var(--breadcrumb-color);
+  margin: 1.25rem;
+}
+
+.separator {
+  margin: 0 0.5rem;
+}
+
+.content-area h1 {
+  font-size: 1.75rem;
+  font-weight: 300;
+  color: var(--content-area-h1-color);
+  margin-bottom: 0.5rem;
+}
+
+.main-content {
+  padding: 1.25rem;
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.content-area p {
+  font-size: 0.875rem;
+  color: var(--content-area-p-color);
+  margin-bottom: 1.25rem;
+}
+
+/* SERVICE GRID STYLING */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem;
+}
+
+.service-card {
+  background-color: var(--nav-bar-bg-color);
+  border: 1px solid var(--service-grid-border-color);
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.service-card:hover {
+  border-color: var(--service-grid-border-color-hover);
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.service-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--service-card-h3-color);
+  margin-bottom: 0.5rem;
+}
+
+.service-card p {
+  font-size: 0.875rem;
+  color: #687078;
+  margin: 0;
+}
+
+/* RESPONSE BAR STYLING */
+
+.response-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--response-bar-bg-color);
+  color: var(--nav-bar-bg-color);
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+  z-index: 1001;
+}
+
+.response-bar.show {
+  height: 3rem;
+}
+
+.response-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+  height: 3rem;
+}
+
+.response-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.status-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--status-dot-bg-color);
+}
+
+.response-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: var(--response-right-color);
+}
+
+#response-status {
+  background-color: var(--status-dot-bg-color);
+  color: var(--text-color);
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.1875rem;
+  font-weight: 600;
+}
+/* MEDIA QUERIES FOR RESPONSIVE DESIGN */
+
+@media (max-width: 48rem) {
+  .header {
+    padding: 0 0.75rem;
+  }
+
+  .nav-item {
+    padding: 0 1rem;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .response-content {
+    padding: 0 0.75rem;
+  }
+}
