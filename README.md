@@ -53,7 +53,7 @@ Then open: [http://localhost](http://localhost)
    docker compose up -d local
    ```
 
-The app will be accessible at: [http://localhost:8080](http://localhost:8080)
+The app will be accessible at: [http://localhost:8080](http://localhost:8080) (we've set a different port so you can ensure it works both ways)
 
 ---
 
@@ -82,8 +82,9 @@ docker stop <container_id>
 ## 📝 Additional Information
 
 - For troubleshooting, check container logs with:
+
   ```
-  docker logs yazzyd
+  docker logs <container_id>
   ```
 
 - You can delete built images and build your own image using:
