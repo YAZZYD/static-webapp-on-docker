@@ -1,0 +1,7 @@
+services:
+  app:
+    image: yazzyd/static-web-app
+    container_name: static-web-app
+    ports:
+      - "8080:80"
+    restart: unless-stopped
