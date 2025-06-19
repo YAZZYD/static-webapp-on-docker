@@ -1,3 +1,5 @@
 .dockerignore
-DockerFile
+Dockerfile
 docker-compose.yaml
+README.md
+.git
